@@ -1,0 +1,220 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: url('https://images.unsplash.com/photo-1657216328529-3852a5f372cb?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.interogare {
+    margin: 10px;
+  }
+
+/* Stil pentru formular */
+.update-form {
+    max-width: 400px; /* Setează lățimea maximă a formularului */
+    margin: 0 auto; /* Centrează formularul pe pagină */
+}
+
+/* Stil pentru etichetele formularului */
+.form-label {
+    display: block; /* Face etichetele bloc pentru a le plasa pe linii separate */
+    margin-bottom: 5px; /* Spațierea de la marginea de jos a etichetelor */
+}
+
+/* Stil pentru câmpurile de selectare */
+.form-select,
+.form-input {
+    width: 100%; /* Umple întreaga lățime a containerului */
+    padding: 8px; /* Spațierea între conținutul câmpurilor și margini */
+    margin-bottom: 10px; /* Spațierea între câmpuri */
+}
+
+/* Stil pentru butonul de actualizare */
+.form-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Stil pentru butonul la hover */
+.form-button:hover {
+    background-color: #23197c;
+}
+
+/* Adaugă acest cod în fișierul style.css */
+
+/* Stil pentru formular */
+.update-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Stil pentru etichetele formularului */
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Stil pentru câmpurile de selectare și de intrare */
+.form-select,
+.form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+/* Stil pentru butonul de actualizare */
+.form-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Stil pentru butonul la hover */
+.form-button:hover {
+    background-color: #23197c;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .titlu {
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Stil pentru formularul de inserare */
+  form.departamente,
+  form.studenti {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Stil pentru input-uri */
+  form.departamente input,
+  form.studenti input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Stil pentru butoanele din formulare */
+  form.departamente button,
+  form.studenti button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Stil pentru butoanele la hover */
+  form.departamente button:hover,
+  form.studenti button:hover {
+    background-color: #23197c;
+  }
+  
+  /* Stil pentru tabele */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /* Stil pentru antetele tabelelor */
+  table th {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  /* Stil pentru rândurile tabelului */
+  table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Stil pentru butoanele de interogare */
+  form button {
+    margin: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Stil pentru butoanele de interogare la hover */
+  form button:hover {
+    background-color: #23197c;
+  }
+  
+
+
+/* Stil pentru containerul de butoane de interogare */
+.interogari-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite înfășurarea pe mai multe linii */
+    justify-content: center; /* Aliniază butoanele în centru */
+    margin-top: 20px; /* Spațiere între butoane și celelalte elemente */
+  }
+  
+  /* Stil pentru butoanele de interogare */
+  .interogari-container form.interogare-button {
+    margin: 10px;
+  }
+  
+  .interogari-container form.interogare-button button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Stil pentru butoanele de interogare la hover */
+  .interogari-container form.interogare-button button:hover {
+    background-color: #4CAF50;
+  }
+  
+  /* Adaugă atribute media pentru design responsiv */
+  @media screen and (max-width: 600px) {
+    .interogari-container {
+      flex-direction: column; /* Schimbă direcția la coloană pentru dispozitivele cu lățime mică */
+      align-items: center; /* Aliniază butoanele în centru pe coloană */
+    }
+  
+    .interogari-container form.interogare-button {
+      width: 100%; /* Umple întreaga lățime a containerului */
+    }
+  }
+  

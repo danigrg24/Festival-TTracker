@@ -1,0 +1,30 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Records Page</title>
+  <link rel="stylesheet" href="/aspect.css">
+</head>
+
+<body>
+  <h2>-1-Afișează orasul care gazduieste cele mai muulte festivale:</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Locatie</th>
+        <th>Numar Festivaluri</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (var i=0; i < int1Set.length; i++) { %>
+        <tr>
+          <td>
+            <%= int1Set[i].Locatie %>
+          </td>
+          <td>
+            <%= int1Set[i].NumarFestivaluri %>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>

@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records Page</title>
+    <link rel="stylesheet" href="/aspect.css">
+</head>
+<body>
+    <h1 class="titlu">Update Page Festivaluri</h1>
+
+    <form action="/updateArtist" method="post" class="update-form">
+        <input type="hidden" name="idToUpdate" value="<%= idToUpdate %>">
+        
+        <label for="updatedField" class="form-label">Selectați câmpul pentru a actualiza:</label>
+        <select name="updatedField" id="updatedField" class="form-select">
+            <option value="NumeArtist">Nume Artist</option>
+            <option value="GenMuzical">Gen Muzical</option>
+            <option value="Nationalitate">Naționalitate</option>
+        </select>
+
+        <label for="updatedValue" class="form-label">Valoare nouă:</label>
+        <input type="text" name="updatedValue" required class="form-input">
+
+        <button type="submit" class="form-button">Actualizare Artiști</button>
+    </form>
+    
+        <% if (error && error !== 'Incomplete data for update') { %>
+            <p class="error-message"><%= error %></p>
+        <% } %>
+
+</body>
+</html>

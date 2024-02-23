@@ -1,0 +1,38 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records Page</title>
+    <link rel="stylesheet" href="/aspect.css">
+  </head>
+  
+  <body>
+    <h2>-2-Afișează data, scena, ora și numele artistului pentru toate evenimentele din cadrul festivalului cu FestivalID 1 (Untold):</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Scena</th>
+          <th>Ora</th>
+          <th>Nume Artist</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i=0; i < int2Set.length; i++) { %>
+          <tr>
+            <td>
+                <%= int2Set[i].Data %>
+            </td>
+            <td>
+                <%= int2Set[i].Scena %>
+            </td>
+            <td>
+                <%= int2Set[i].Ora %>
+            </td>
+            <td>
+                <%= int2Set[i].NumeArtist%>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h1 style="text-align: center;">Datele companiei "Festivaluri"</h1>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compania Festivaluri</title>
+    <link rel="stylesheet" href="/aspect.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Festivaluri</h1>
+    <table>
+        <tr>
+            <th>FestivalID</th>
+            <th>Nume festival</th>
+            <th>Data început</th>
+            <th>Data sfârșit</th>
+            <th>Locație</th>
+
+            <style>
+                .buttoninsert {
+                    background-color: orange; /* Green */
+                    border: none;
+                    color: white;
+                    padding: 8px 15px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    border-radius: 12px;
+                }
+            </style>
+
+            <th>Acțiuni
+                <button id="insertButtonFestivals" class="buttoninsert" onclick="showForm('insertFormFestivals', 'insertButtonFestivals')">Insert</button>     
+                    <form id="insertFormFestivals" action="/insertFestival" method="post" class="departamente" style="display: none;">
+                    <input type="text" name="festivalID" placeholder="FestivalID">
+                    <input type="text" name="numeFestival" placeholder="Nume Festival">
+                    <input type="date" name="dataInceput" placeholder="Data Inceput">
+                    <input type="date" name="dataSfarsit" placeholder="Data Sfarsit">
+                    <input type="text" name="locatie" placeholder="Locatie">
+                    <input class="button" type="submit" value="Insert">
+                </form>
+            </th>
+        </tr>
+        <% firstSet.forEach(function(record) { %>
+            <tr>
+                <td><%= record.FestivalID %></td>
+                <td><%= record.NumeFestival %></td>
+                <td><%= record.DataInceput %></td>
+                <td><%= record.DataSfarsit %></td>
+                <td><%= record.Locatie %></td>
+                <td>
+                    <style>
+                        .button {
+                            background-color: #4CAF50; /* Green */
+                            border: none;
+                            color: white;
+                            padding: 8px 15px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            margin: 4px 2px;
+                            cursor: pointer;
+                            border-radius: 12px;
+                        }
+                    </style>
+                <div style="text-align: center;">
+                    <form action="/deleteFestival" method="post">
+                        <input type="hidden" name="idToDelete" value="<%= record.FestivalID %>">
+                        <input class="button" type="submit" value="Delete">
+                    </form>
+
+                    <button class="button updateButton">Update</button>
+                    <form id="updateForm" action="/updateFestival" method="post" style="display: none;">
+                        <input type="hidden" name="idToUpdate" value="<%= record.FestivalID %>">
+                        <label for="updatedField">Selectați câmpul pentru a actualiza:</label>
+                        <select name="updatedField" id="updatedField">
+                            <option value="NumeFestival">Nume Festival</option>
+                            <option value="DataInceput">Data Inceput</option>
+                            <option value="DataSfarsit">Data Sfarsit</option>
+                            <option value="Locatie">Locatie</option>
+                        </select>
+                        <label for="updatedValue">Valoare nouă:</label>
+                        <input type="text" name="updatedValue" required>
+                        <input class="button" type="submit" value="Update">
+                    </form>
+
+                </div>
+                </td>
+            </tr>
+        <% }); %>
+    </table>
+
+    <h1 style="text-align: center;">Program</h1>
+    <table>
+        <tr>
+            <th>ArtistID</th>
+            <th>FestivalID</th>
+            <th>Data</th>
+            <th>Scena</th>
+            <th>Ora</th>
+        </tr>
+        <% secondSet.forEach(function(record) { %>
+            <tr>
+                <td><%= record.ArtistID %></td>
+                <td><%= record.FestivalID %></td>
+                <td><%= record.Data %></td>
+                <td><%= record.Scena %></td>
+                <td><%= record.Ora %></td>
+            </tr>
+            <% }); %>
+    </table>
+
+    <h1 style="text-align: center;">Artiști</h1>
+    <table>
+        <tr>
+            <th>ArtistID</th>
+            <th>Nume Artist</th>
+            <th>Gen Muzical</th>
+            <th>Naționalitate</th>
+
+            <style>
+                .buttoninsert {
+                    background-color: orange; /* Green */
+                    border: none;
+                    color: white;
+                    padding: 8px 15px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    margin: 4px 2px;
+                    cursor: pointer;
+                    border-radius: 12px;
+                }
+            </style>
+
+            <th>Acțiuni
+                <button id="insertButtonArtists" class="buttoninsert" onclick="showForm('insertFormArtists', 'insertButtonArtists')">Insert</button>
+                <form id="insertFormArtists" action="/insertArtist" method="post" class="departamente" style="display: none;">
+                    <input type="text" name="artistID" placeholder="ArtistID">
+                    <input type="text" name="numeArtist" placeholder="Nume Artist">
+                    <input type="text" name="genMuzical" placeholder="Gen Muzical">
+                    <input type="text" name="nationalitate" placeholder="Nationalitate">
+                    <input class="button" type="submit" value="Insert">
+                </form>
+            </th>
+        </tr>
+        <% thirdSet.forEach(function(record) { %>
+            <tr>
+                <td><%= record.ArtistID %></td>
+                <td><%= record.NumeArtist %></td>
+                <td><%= record.GenMuzical %></td>
+                <td><%= record.Nationalitate %></td>
+                <td>
+                    <style>
+                        .button {
+                            background-color: #4CAF50; /* Green */
+                            border: none;
+                            color: white;
+                            padding: 8px 15px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 16px;
+                            margin: 4px 2px;
+                            cursor: pointer;
+                            border-radius: 12px;
+                        }
+                    </style>
+                <div style="text-align: center;">
+                    <form action="/deleteArtist" method="post">
+                        <input type="hidden" name="idToDelete" value="<%= record.ArtistID %>">
+                        <input class="button" type="submit" value="Delete">
+                    </form>
+
+
+                    <button class="button updateButton">Update</button>
+                    <form id="updateForm" action="/updateArtist" method="post" style="display: none;">
+                        <input type="hidden" name="idToUpdate" value="<%= record.ArtistID %>">
+                        <label for="updatedField">Selectați câmpul pentru a actualiza:</label>
+                        <select name="updatedField" id="updatedField">
+                            <option value="NumeArtist">Nume Artist</option>
+                            <option value="GenMuzical">Gen Muzical</option>
+                            <option value="Nationalitate">Nationalitate</option>
+                        </select>
+                        <label for="updatedValue">Valoare nouă:</label>
+                        <input type="text" name="updatedValue" required>
+                        <input class="button" type="submit" value="Update">
+                    </form>
+                </div>
+                </td>
+            </tr>
+        <% }); %>
+    </table>
+
+    <h1 style="text-align: center;">Participanți</h1>
+    <table>
+        <tr>
+            <th>ParticipantID</th>
+            <th>Nume</th>
+            <th>Vârstă</th>
+            <th>Ocupație</th>
+        </tr>
+
+        <% fourthSet.forEach(function(record) { %>
+            <tr>
+                <td><%= record.ParticipantID %></td>
+                <td><%= record.Nume %></td>
+                <td><%= record.Varsta %></td>
+                <td><%= record.Ocupatie %></td>
+            </tr>
+            <% }); %>
+    </table>
+
+    <h1 style="text-align: center;">Participanți Festivaluri</h1>
+    <table>
+         <tr>
+            <th>ParticipantID</th>
+            <th>FestivalID</th>
+        </tr>
+        <% fifthSet.forEach(function(record) { %>
+            <tr>
+                <td><%= record.ParticipantID %></td>
+                <td><%= record.FestivalID %></td>
+            </tr>
+        <% }); %>
+    </table>
+
+            <h1 style="text-align: center;">Recenzii</h1>
+            <table>
+                <tr>
+                    <th>RecenzieID</th>
+                    <th>FestivalID</th>
+                    <th>Notă</th>
+                    <th>Comentariu</th>
+                </tr>
+                <% sixthSet.forEach(function(record) { %>
+                    <tr>
+                        <td><%= record.RecenzieID %></td>
+                        <td><%= record.FestivalID %></td>
+                        <td><%= record.Nota %></td>
+                        <td><%= record.Comentariu %></td>
+                    </tr>
+                <% }); %>
+            </table>
+
+            <h1 style="text-align: center;">Bilete</h1>
+            <table>
+                <tr>
+                    <th>BiletID</th>
+                    <th>ParticipantID</th>
+                    <th>Tip</th>
+                    <th>Preț</th>
+                </tr>
+                <% seventhSet.forEach(function(record) { %>
+                    <tr>
+                        <td><%= record.BiletID %></td>
+                        <td><%= record.ParticipantID %></td>
+                        <td><%= record.Tip %></td>
+                        <td><%= record.Pret %></td>
+                    </tr>
+                <% }); %>
+            </table>
+
+    </table>
+
+
+    <script>
+        function showForm(formId, buttonId) {
+            document.getElementById(formId).style.display = 'block';
+            document.getElementById(buttonId).style.display = 'none';
+        }
+    </script>
+
+    <script>
+        var updateButtons = document.getElementsByClassName('updateButton');
+        for (var i = 0; i < updateButtons.length; i++) {
+            updateButtons[i].addEventListener('click', function() {
+                var form = this.nextElementSibling;
+                form.style.display = 'block';
+                this.style.display = 'none';
+            });
+        }
+    </script>
+
+    <h1 style="text-align: center;"> Interogări simple</h1>
+
+
+    <div class="interogare">
+        <p class="explicatie"> Interogarea1 simplă</p>
+        <form action="/Interogarea1_simpla" method="post" class="interogare-form">
+            <button type="submit" class="form-button">Apasă aici!</button>
+        </form>
+    </div>
+
+    <div class="interogare">
+        <p class="explicatie"> Interogarea2 simplă</p>
+        <form action="/Interogarea2_simpla" method="post" class="interogare-form">
+            <button type="submit" class="form-button">Apasă aici!</button>
+        </form>
+    </div>
+
+    <div class="interogare">
+        <p class="explicatie"> Interogarea3 simplă</p>
+        <form action="/Interogarea3_simpla" method="post" class="interogare-form">
+            <button type="submit" class="form-button">Apasă aici!</button>
+        </form>
+    </div>
+
+    <div class="interogare">
+        <p class="explicatie"> Interogarea4 simplă</p>
+        <form action="/Interogarea4_simpla" method="post" class="interogare-form">
+            <button type="submit" class="form-button">Apasă aici!</button>
+        </form>
+    </div>
+
+    <div class="interogare">
+        <p class="explicatie"> Interogarea5 simplă - câmp variabil</p>
+        <form action="/Interogarea5_simpla" method="post" class="interogare-form">
+            <input type="text" name="locatie" placeholder="Locația aleasă" required>
+            <button type="submit" class="form-button">Apasă aici!</button>
+        </form>
+    </div>
+
+    <div class="interogare">
+        <p class="explicatie"> Interogarea6 simplă</p>
+        <form action="/Interogarea6_simpla" method="post" class="interogare-form">
+            <button type="submit" class="form-button">Apasă aici!</button>
+        </form>
+    </div>
+
+    <div class="interogare">
+        <p class="explicatie"> Interogarea1 complexă</p>
+        <form action="/Interogarea7_complexa" method="post" class="interogare-form">
+            <button type="submit" class="form-button">Apasă aici!</button>
+        </form>
+    </div>
+
+    <div class="interogare">
+        <p class="explicatie"> Interogarea2 complexă - câmp variabil</p>
+        <form action="/Interogarea8_complexa" method="post" class="interogare-form">
+            <input type="number" name="varsta" placeholder="Vârsta aleasă" required>
+            <button type="submit" class="form-button">Apasă aici!</button>
+        </form>
+    </div>
+
+    <div class="interogare">
+        <p class="explicatie"> Interogarea3 complexă</p>
+        <form action="/Interogarea9_complexa" method="post" class="interogare-form">
+            <button type="submit" class="form-button">Apasă aici!</button>
+        </form>
+    </div>
+
+    <div class="interogare">
+        <p class="explicatie"> Interogarea4 complexă</p>
+        <form action="/Interogarea10_complexa" method="post" class="interogare-form">
+            <button type="submit" class="form-button">Apasă aici!</button>
+        </form>
+    </div>
+
+</body>
+</html>

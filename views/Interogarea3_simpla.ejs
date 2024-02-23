@@ -1,0 +1,30 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records Page</title>
+    <link rel="stylesheet" href="/aspect.css">
+  </head>
+  
+  <body>
+    <h2>-3-Afișează numele și comentariul recenziei pentru fiecare festival care are cel puțin o recenzie:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nume Festival</th>
+          <th>Comentariu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i=0; i < int3Set.length; i++) { %>
+          <tr>
+            <td>
+                <%= int3Set[i].NumeFestival %>
+            </td>
+            <td>
+                <%= int3Set[i].Comentariu %>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>

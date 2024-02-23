@@ -1,0 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records Page</title>
+    <link rel="stylesheet" href="/aspect.css">
+  </head>
+  
+  <body>
+    <h2>-9-Afișează participanții care au achiziționat bilete pentru festivalurile la care a cântat "Delia":</h2>
+    <table>
+      <thead>
+        <tr>
+            <th>Nume Participanți</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i=0; i < int9Set.length; i++) { %>
+          <tr>
+            <td>
+                <%= int9Set[i].Nume%>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>

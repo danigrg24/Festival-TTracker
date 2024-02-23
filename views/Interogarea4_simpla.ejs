@@ -1,0 +1,38 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records Page</title>
+    <link rel="stylesheet" href="/aspect.css">
+  </head>
+  
+  <body>
+    <h2>-4-Afișează numele și locația festivalului, precum și numele artistului și scena la care va concerta pentru fiecare înregistrare din tabela Program:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nume Festival</th>
+          <th>Locatie</th>
+          <th>Nume Artist</th>
+          <th>Scena</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i=0; i < int4Set.length; i++) { %>
+          <tr>
+            <td>
+                <%= int4Set[i].NumeFestival %>
+            </td>
+            <td>
+                <%= int4Set[i].Locatie %>
+            </td>
+            <td>
+                <%= int4Set[i].NumeArtist %>
+            </td>
+            <td>
+                <%= int4Set[i].Scena %>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>

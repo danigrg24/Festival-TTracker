@@ -1,0 +1,34 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records Page</title>
+    <link rel="stylesheet" href="/aspect.css">
+  </head>
+  
+  <body>
+    <h2>-10-Afișează toti artistii care participa la festivaluri si sunt de nationalitate americana:</h2>
+    <table>
+      <thead>
+        <tr>
+            <th>Nume Artist</th>
+            <th>Gen Muzical</th>
+            <th>Naționalitate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i=0; i < int10Set.length; i++) { %>
+          <tr>
+            <td>
+                <%= int10Set[i].NumeArtist%>
+            </td>
+            <td>
+              <%= int10Set[i].GenMuzical%>
+          </td>
+          <td>
+            <%= int10Set[i].Nationalitate%>
+        </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>

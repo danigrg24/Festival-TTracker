@@ -1,0 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records Page</title>
+    <link rel="stylesheet" href="/aspect.css">
+  </head>
+  
+  <body>
+    <h2>-2-Afișează numele artiștilor care au participat la cel puțin două festivaluri diferite:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nume Artist</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i=0; i < int7Set.length; i++) { %>
+          <tr>
+            <td>
+                <%= int7Set[i].NumeArtist%>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>

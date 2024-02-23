@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records Page</title>
+    <link rel="stylesheet" href="/aspect.css">
+  </head>
+  
+  <body>
+    <h2>-5-Afișează numele festivalurilor, locația, numele artistului și scena, precum și ora spectacolului programat, pentru festivalurile care au locația la alegere:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nume Festival</th>
+          <th>Locatie</th>
+          <th>Nume Artist</th>
+          <th>Scena</th>
+          <th>Ora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i=0; i < int5Set.length; i++) { %>
+          <tr>
+            <td>
+                <%= int5Set[i].NumeFestival %>
+            </td>
+            <td>
+                <%= int5Set[i].Locatie %>
+            </td>
+            <td>
+              <%= int5Set[i].NumeArtist %>
+          </td>
+          <td>
+            <%= int5Set[i].Scena %>
+        </td>
+        <td>
+          <%= int5Set[i].Ora %>
+      </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>

@@ -1,0 +1,38 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records Page</title>
+    <link rel="stylesheet" href="/aspect.css">
+  </head>
+  
+  <body>
+    <h2>-6-Afișează numele și data festivalurilor, precum și numărul total de participanți pentru fiecare festival:</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nume Festival</th>
+          <th>Data Inceput</th>
+          <th>Data Sfarsit</th>
+          <th>Numar Participanți</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (var i=0; i < int6Set.length; i++) { %>
+          <tr>
+            <td>
+                <%= int6Set[i].NumeFestival %>
+            </td>
+            <td>
+                <%= int6Set[i].DataInceput %>
+            </td>
+            <td>
+              <%= int6Set[i].DataSfarsit %>
+          </td>
+          <td>
+            <%= int6Set[i].NumarParticipanti %>
+        </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
